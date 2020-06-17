@@ -35,7 +35,7 @@ export class TestData {
             id: 1,
             title: 'Залить бензин полный бак',
             priority: TestData.priorities[2],
-            completed: false,
+            completed: true,
             category: TestData.categories[9],
             date: new Date('2019-04-10')
         },
