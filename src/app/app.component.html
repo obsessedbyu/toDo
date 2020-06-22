@@ -1,5 +1,13 @@
 <div class="wrapper ">
-<app-categories></app-categories>
+<app-categories
+  [categories]="categories"
+  [selectedCategory]="selectedCategory"
+  (selectCategory)="onSelectCategory($event)"
+  (updateCategory)="onUpdateCategory($event)"
+  (deleteCategory)="onDeleteCategory($event)"
+  (addCategory)="onAddCategory($event)"
+  (searchCategory)="onSearchCategory($event)"
+></app-categories>
   <div class="main-panel">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -141,7 +149,21 @@
 
         <div class="row">
           <div class="col-lg-12 col-md-12">
-            <app-tasks></app-tasks>
+            <app-tasks
+              [tasks]="tasks"
+              [priorities]="priorities"
+              [selectedCategory]="selectedCategory"
+
+
+              (updateTask)="onUpdateTask($event)"
+              (addTask)="onAddTask($event)"
+              (deleteTask)="onDeleteTask($event)"
+              (selectCategory)="onSelectCategory($event)"
+
+              (filterByStatus)="onFilterTasksByStatus($event)"
+              (filterByTitle)="onSearchTasks($event)"
+              (filterByPriority)="onFilterTasksByPriority($event)"
+            ></app-tasks>
           </div>
         </div>
       </div>
